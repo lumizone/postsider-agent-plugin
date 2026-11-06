@@ -1,0 +1,16 @@
+{
+  "name": "postsider-plugins",
+  "description": "PostSider plugins for Claude Code",
+  "owner": {
+    "name": "PostSider",
+    "email": "lukasz@postsider.com",
+    "url": "https://postsider.com"
+  },
+  "plugins": [
+    {
+      "name": "postsider",
+      "source": "./claude",
+      "description": "Plan, schedule, publish and review social media posts across 30+ networks through PostSider's hosted MCP server, with a skill for drafts, approvals, media and failure triage."
+    }
+  ]
+}

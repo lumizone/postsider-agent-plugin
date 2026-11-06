@@ -1,0 +1,23 @@
+{
+  "name": "postsider",
+  "displayName": "PostSider",
+  "version": "1.0.0",
+  "description": "Plan, schedule, publish and review social media posts across 30+ networks in Claude through PostSider's hosted MCP server, with a skill for drafts, approvals, media and failure triage.",
+  "author": {
+    "name": "PostSider",
+    "email": "lukasz@postsider.com",
+    "url": "https://postsider.com"
+  },
+  "homepage": "https://docs.postsider.com/agent/mcp/overview",
+  "repository": "https://github.com/lumizone/postsider-agent-plugin",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://postsider.com/privacy/",
+  "keywords": [
+    "social-media",
+    "scheduling",
+    "publishing",
+    "content-calendar",
+    "approvals",
+    "analytics"
+  ]
+}

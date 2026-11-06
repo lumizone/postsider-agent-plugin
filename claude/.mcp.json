@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "postsider": {
+      "type": "http",
+      "url": "https://mcp.postsider.com/mcp"
+    }
+  }
+}

@@ -1,11 +1,11 @@
-# PostSider plugin for Hermes Agent and OpenClaw
+# PostSider plugin for Hermes Agent, OpenClaw and Claude
 
 ![PostSider](assets/banner.png)
 
 Your own social media calendar inside [Hermes Agent](https://github.com/NousResearch/hermes-agent) or
-[OpenClaw](https://github.com/openclaw/openclaw), through the hosted [PostSider](https://postsider.com)
-MCP server. Plan, draft, schedule, publish and review posts on 30+ networks, and let a human approve what
-goes live. OpenClaw users: see [OpenClaw](#openclaw) below.
+[OpenClaw](https://github.com/openclaw/openclaw) or Claude, through the hosted
+[PostSider](https://postsider.com) MCP server. Plan, draft, schedule, publish and review posts on 30+ networks, and let a human approve what
+goes live. OpenClaw users: see [OpenClaw](#openclaw) below. Claude users: see [Claude Code](#claude-code).
 
 Ask things like:
 
@@ -28,6 +28,9 @@ This is an [Agent Plugins v1](https://agent-plugins.org) package with configurat
   before anything public or permanent).
 - `.claude-plugin/plugin.json` and `.mcp.json`: the same plugin and server in the Claude plugin
   layout, which ClawHub and OpenClaw read.
+- `claude/`: the plugin for Claude (claude.ai, Cowork and Claude Code). It connects to the remote server
+  directly over HTTP with Claude's own OAuth, so it needs no Node.js.
+  `.claude-plugin/marketplace.json` makes this repository a Claude Code marketplace that lists it.
 
 ## Install
 
@@ -71,6 +74,16 @@ mcp_servers:
     headers:
       Authorization: "Bearer <your PostSider token>"
 ```
+
+## Claude Code
+
+```bash
+claude plugin install postsider --marketplace lumizone/postsider-agent-plugin
+```
+
+Or inside a session: `/plugin install postsider --marketplace lumizone/postsider-agent-plugin`. Then
+run `/mcp`, choose `plugin:postsider:postsider` and sign in to PostSider. Details:
+[claude/README.md](claude/README.md).
 
 ## OpenClaw
 
