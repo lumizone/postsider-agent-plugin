@@ -1,10 +1,11 @@
-# PostSider plugin for Hermes Agent
+# PostSider plugin for Hermes Agent and OpenClaw
 
 ![PostSider](assets/banner.png)
 
-Your own social media calendar inside [Hermes Agent](https://github.com/NousResearch/hermes-agent),
-through the hosted [PostSider](https://postsider.com) MCP server. Plan, draft, schedule, publish and review
-posts on 30+ networks, and let a human approve what goes live.
+Your own social media calendar inside [Hermes Agent](https://github.com/NousResearch/hermes-agent) or
+[OpenClaw](https://github.com/openclaw/openclaw), through the hosted [PostSider](https://postsider.com)
+MCP server. Plan, draft, schedule, publish and review posts on 30+ networks, and let a human approve what
+goes live. OpenClaw users: see [OpenClaw](#openclaw) below.
 
 Ask things like:
 
@@ -25,6 +26,8 @@ This is an [Agent Plugins v1](https://agent-plugins.org) package with configurat
   `https://mcp.postsider.com/mcp` with OAuth sign-in.
 - `skills/postsider/SKILL.md`: how to use the tools well (draft first, read back every write, confirm
   before anything public or permanent).
+- `.claude-plugin/plugin.json` and `.mcp.json`: the same plugin and server in the Claude plugin
+  layout, which ClawHub and OpenClaw read.
 
 ## Install
 
@@ -68,6 +71,41 @@ mcp_servers:
     headers:
       Authorization: "Bearer <your PostSider token>"
 ```
+
+## OpenClaw
+
+OpenClaw reads this package as a Claude-layout bundle: it loads the `postsider` skill and the
+`postsider` MCP server from `.mcp.json`.
+
+```bash
+openclaw plugins install clawhub:postsider
+```
+
+OpenClaw gives a new MCP connection about 30 seconds and a tool call 60 seconds by default. The
+browser sign-in through `mcp-remote` has to fit in the first window, and a slow call such as a large
+media upload can run longer than the second. For everyday use, let OpenClaw run the sign-in itself with
+a longer call timeout. A server you add yourself replaces the package's server of the same name, and the
+skill keeps working:
+
+```bash
+openclaw mcp set postsider '{"url":"https://mcp.postsider.com/mcp","transport":"streamable-http","auth":"oauth","requestTimeoutMs":180000}'
+```
+
+```bash
+openclaw mcp login postsider
+```
+
+`login` prints a link; open it, sign in to PostSider and allow access. On a machine without a browser,
+open the link elsewhere and finish with `openclaw mcp login postsider --code <code>`.
+
+**OpenClaw does not ask before write tools.** It does not read the `untrusted` marker in `plugin.json`,
+so nothing in OpenClaw stops the agent from calling `postsider_create_post` with type `now`, which
+publishes to your public social accounts immediately, or from deleting posts and media. The bundled
+skill tells the agent to default to drafts, to show the exact text, channels and timing first, and to
+confirm before anything public or permanent, but that is an instruction to the model, not a gate. If you
+want a hard limit, use PostSider's own review controls (the approval flow, available from the Team plan) and do
+not run the agent unattended against channels you are not ready to post to. `postsider_pause_publishing` stops all publishing for the organization if
+something goes wrong, and only a person can resume it in the dashboard.
 
 ## Plans
 

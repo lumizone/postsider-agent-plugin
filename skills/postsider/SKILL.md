@@ -12,7 +12,9 @@ metadata:
 
 PostSider is a hosted social media calendar. Its MCP server lets you read the user's real workspace and
 prepare or publish posts on their connected channels. In Hermes the tools are registered with the server
-prefix, for example `mcp__postsider__postsider_list_channels`; this skill uses the bare names.
+prefix, for example `mcp__postsider__postsider_list_channels` (other clients may prefix them differently);
+this skill uses the bare names. Not every client asks before a write tool runs, so the safety rules below
+are yours to follow.
 
 ## Before the first call
 
