@@ -1,0 +1,17 @@
+{
+  "name": "postsider-plugins",
+  "owner": {
+    "name": "PostSider",
+    "email": "lukasz@postsider.com"
+  },
+  "metadata": {
+    "description": "PostSider plugins for Cursor"
+  },
+  "plugins": [
+    {
+      "name": "postsider",
+      "source": "cursor",
+      "description": "Plan, schedule, publish and review social media posts across 30+ networks from Cursor through PostSider's hosted MCP server."
+    }
+  ]
+}
