@@ -1,4 +1,4 @@
-# PostSider plugin for Hermes Agent, OpenClaw and Claude
+# PostSider plugin for Hermes Agent, OpenClaw, Claude, Gemini CLI and Cursor
 
 ![PostSider](assets/banner.png)
 
@@ -31,6 +31,9 @@ This is an [Agent Plugins v1](https://agent-plugins.org) package with configurat
 - `claude/`: the plugin for Claude (claude.ai, Cowork and Claude Code). It connects to the remote server
   directly over HTTP with Claude's own OAuth, so it needs no Node.js.
   `.claude-plugin/marketplace.json` makes this repository a Claude Code marketplace that lists it.
+- `gemini-extension.json` and `GEMINI.md`: the same server as a Gemini CLI extension (the root `skills/`
+  folder is bundled too).
+- `cursor/`: the plugin for Cursor (`.cursor-plugin/plugin.json`, `mcp.json`, skill, logo).
 
 ## Install
 
@@ -84,6 +87,24 @@ claude plugin install postsider --marketplace lumizone/postsider-agent-plugin
 Or inside a session: `/plugin install postsider --marketplace lumizone/postsider-agent-plugin`. Then
 run `/mcp`, choose `plugin:postsider:postsider` and sign in to PostSider. Details:
 [claude/README.md](claude/README.md).
+
+## Gemini CLI
+
+```bash
+gemini extensions install https://github.com/lumizone/postsider-agent-plugin
+```
+
+Then run `/mcp auth postsider` inside Gemini CLI, sign in to PostSider and allow access.
+
+## Cursor
+
+Add the server with one click, then connect it in Cursor Settings, MCP:
+
+```
+cursor://anysphere.cursor-deeplink/mcp/install?name=postsider&config=eyJ1cmwiOiJodHRwczovL21jcC5wb3N0c2lkZXIuY29tL21jcCJ9
+```
+
+The packaged Cursor plugin lives in [cursor/](cursor/README.md).
 
 ## OpenClaw
 

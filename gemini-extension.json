@@ -1,0 +1,11 @@
+{
+  "name": "postsider",
+  "version": "1.0.0",
+  "description": "Plan, schedule, publish and review social media posts across 30+ networks from Gemini CLI through PostSider's hosted MCP server, with a skill for drafts, approvals, media and failure triage.",
+  "mcpServers": {
+    "postsider": {
+      "httpUrl": "https://mcp.postsider.com/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
