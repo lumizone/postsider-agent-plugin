@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "postsider",
+  "version": "1.0.0",
+  "description": "Plan, schedule, publish and review social media posts across 30+ networks from your agent through PostSider's hosted MCP server, with a workflow skill for drafts, approvals, media and failure triage.",
+  "author": {
+    "name": "PostSider",
+    "email": "lukasz@postsider.com",
+    "url": "https://postsider.com"
+  },
+  "homepage": "https://docs.postsider.com/agent/mcp/overview",
+  "repository": "https://github.com/lumizone/postsider-agent-plugin",
+  "license": "MIT",
+  "keywords": ["social-media", "scheduling", "publishing", "content-calendar", "approvals", "analytics", "automation", "mcp"],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "postsider": {
+          "trust": "untrusted"
+        }
+      }
+    }
+  }
+}
