@@ -12,6 +12,7 @@
   "repository": "https://github.com/lumizone/postsider-agent-plugin",
   "license": "MIT",
   "privacyPolicyUrl": "https://postsider.com/privacy/",
+  "icon": ".claude-plugin/icon.png",
   "keywords": [
     "social-media",
     "scheduling",
