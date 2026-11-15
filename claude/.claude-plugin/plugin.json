@@ -1,7 +1,7 @@
 {
   "name": "postsider",
   "displayName": "PostSider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plan, schedule, publish and review social media posts across 30+ networks in Claude through PostSider's hosted MCP server, with a skill for drafts, approvals, media and failure triage.",
   "author": {
     "name": "PostSider",
